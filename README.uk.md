@@ -99,3 +99,15 @@ Pages, в ветку `gh-pages`, каждый раз когда обновляе
 3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
    отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
    скрипта будет указано в чем проблема.
+
+// Import the functions you need from the SDKs you need import { initializeApp }
+from "firebase/app"; // TODO: Add SDKs for Firebase products that you want to
+use // https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration const firebaseConfig = { apiKey:
+"AIzaSyCHg4J_qzob1qjMAXidJJyR0ERxgFjrLiU", authDomain:
+"filmoteka-2fe1b.firebaseapp.com", projectId: "filmoteka-2fe1b", storageBucket:
+"filmoteka-2fe1b.appspot.com", messagingSenderId: "100482531492", appId:
+"1:100482531492:web:dae951dde4f36c7255a631" };
+
+// Initialize Firebase const app = initializeApp(firebaseConfig);

@@ -1,0 +1,259 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 100;
+
+    opacity: 1;
+    transition: opacity var(--transition),
+        visibility var(--transition);
+
+    &.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+
+    }
+
+    &.is-hidden .modal-wrapper {
+        transform: translate(-50%, -50%) scale(0.3);
+        opacity: 0;
+    }
+}
+
+
+
+.modal-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    opacity: 1;
+
+    background-color: #fff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    padding: 40px;
+
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--transition) 200ms,
+        opacity var(--transition) 200ms;
+
+    @include mq(mobile) {
+        width: 450px;
+    }
+
+    @include mq(desktop) {
+        width: 528px;
+    }
+}
+
+.modal-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    cursor: pointer;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    fill: var(--secondary-pink-color);
+    transition: fill var(--transition);
+
+    &:hover {
+        fill: var(--red-pink-color);
+    }
+}
+
+// modal form style
+
+
+.form-title {
+    display: block;
+    text-align: center;
+
+    font-size: 18px;
+    font-style: normal;
+    line-height: 1.5;
+    color: var(--red-pink-color);
+
+    margin-bottom: 12px;
+
+    @include mq(mobile) {
+        font-style: 20px;
+    }
+
+    @include mq(desktop) {
+        line-height: 1.1;
+    }
+
+}
+
+.form-item {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 10px;
+}
+
+.form-item .input {
+    font-size: 14px;
+
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    padding-left: 42px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-right: 12px;
+
+    outline: transparent;
+
+    transition: border var(--transition);
+
+    &:focus {
+        border-color: var(--secondary-pink-color);
+    }
+}
+
+
+.label-name {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: var(--regular-font-weight);
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+
+    margin-bottom: 4px;
+}
+
+.form-icon {
+    position: absolute;
+
+    bottom: 11px;
+    left: 12px;
+
+    fill: var(--secondary-light-grey-color);
+
+    transition: fill var(--transition);
+
+    .input:focus+& {
+        fill: var(--red-pink-color)
+    }
+}
+
+
+.text-area {
+    resize: none;
+    width: 100%;
+    height: 80px;
+
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    padding: 12px 16px;
+
+    outline: transparent;
+
+    transition: border var(--transition);
+
+    @include mq(mobile) {
+        height: 120px;
+    }
+
+
+    &:focus {
+        border-color: var(--secondary-pink-color);
+    }
+}
+
+
+.form-item.coment {
+    margin-bottom: 20px;
+}
+
+.policy-list {
+
+    font-style: normal;
+    font-weight: var(--regular-font-weight);
+    font-size: 9px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+
+    align-items: center;
+    justify-content: space-evenly;
+
+    flex-direction: row;
+
+    margin-bottom: 10px;
+
+    @include mq(mobile) {
+        font-size: 12px;
+        margin-bottom: 30px;
+    }
+
+    @include mq(desktop) {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+
+.policy-list_text {
+    margin-left: 10px;
+
+    @include mq(mobile) {
+        margin-left: 0;
+    }
+}
+
+.btn-buy-submit {
+    background-color: var(--secondary-pink-color);
+    color: var(--white-color);
+    cursor: pointer;
+    // font-family: var(--primary-font-family);
+    font-style: normal;
+    // font-weight: var(--bold-font-weight);
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+
+    min-width: 200px;
+    min-height: 50px;
+    border: none;
+    border-radius: 4px;
+
+    padding: 10px 32px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    transition: color var(--transition),
+        background-color var(--transition);
+
+
+    &:hover,
+    &:focus {
+        background-color: var(--pink-color);
+        color: var(--white-color);
+
+    }
+}
