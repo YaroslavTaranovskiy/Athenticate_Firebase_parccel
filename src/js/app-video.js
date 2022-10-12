@@ -1,5 +1,6 @@
-import { getAuthForm } from "./auth";
+import { getAuthForm, authWithEmailAndPassword  } from "./auth";
 import { createModal } from "./utils";
+
 
 
 
