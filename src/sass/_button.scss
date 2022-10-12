@@ -22,4 +22,9 @@
         background: #ff6b01;
         border: none;
     }
+
+    &:hover,
+    &:focus {
+        background: #e7e3e1;
+    }
 }
